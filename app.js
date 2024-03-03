@@ -1,14 +1,12 @@
-import { Scene, PerspectiveCamera, WebGLRenderer, Mesh, MeshPhongMaterial, PointLight, BoxGeometry } from "three";
+import { Scene, WebGLRenderer, Mesh, MeshPhongMaterial, PointLight, BoxGeometry } from "three";
+import Camera from "./engine/camera";
 
 const scene = new Scene();
 
 const width = innerWidth;
 const height = 768;
 
-const camera = new PerspectiveCamera(70, width/height);
-camera.position.set(0, 0, 4);
-camera.lookAt(0, 0, 0);
-
+const camera = new Camera(width, height);
 
 const geometry = new BoxGeometry(1, 1, 1);
 const material = new MeshPhongMaterial();
