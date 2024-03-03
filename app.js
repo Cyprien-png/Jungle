@@ -1,5 +1,6 @@
-import { Scene, WebGLRenderer, Mesh, MeshPhongMaterial, PointLight, BoxGeometry } from "three";
-import Camera from "./engine/camera";
+import { Scene, WebGLRenderer, Mesh, MeshPhongMaterial, BoxGeometry } from "three";
+import Camera from "./engine/Camera";
+import Light from "./engine/Light";
 
 const scene = new Scene();
 
@@ -12,9 +13,7 @@ const geometry = new BoxGeometry(1, 1, 1);
 const material = new MeshPhongMaterial();
 const cube = new Mesh(geometry, material);
 
-const light = new PointLight();
-light.position.set(0, 2, 1);
-light.lookAt(0, 0, 0);
+const light = new Light(0, 2, 1);
 
 scene.add(cube);
 scene.add(light);
