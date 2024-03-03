@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "tailwind": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tailwindcss": "^3.4.1",
     "vite": "^5.1.4"
   },
   "dependencies": {
