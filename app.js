@@ -1,6 +1,7 @@
-import { Scene, WebGLRenderer, Mesh, MeshPhongMaterial, BoxGeometry } from "three";
+import { Scene, Mesh, MeshPhongMaterial, BoxGeometry } from "three";
 import Camera from "./engine/Camera";
 import Light from "./engine/Light";
+import Graphic from "./engine/Graphic";
 
 const scene = new Scene();
 
@@ -20,9 +21,8 @@ scene.add(light);
 
 
 const canvas = document.querySelector('canvas');
-const graphic = new WebGLRenderer({canvas});
-
-graphic.setSize(width, height);
-
-graphic.render(scene, camera);
+const graphic = new Graphic(scene, camera, canvas, width, height);
+graphic.onUpdate(delta => {
+    // Update each frame
+});
 
