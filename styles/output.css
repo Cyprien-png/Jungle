@@ -560,6 +560,10 @@ video {
   height: 768px;
 }
 
+.h-\[110dvh\] {
+  height: 110dvh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -580,6 +584,11 @@ video {
   justify-content: space-between;
 }
 
+.bg-slate-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
+
 .p-8 {
   padding: 2rem;
 }
@@ -587,6 +596,11 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-55 {
