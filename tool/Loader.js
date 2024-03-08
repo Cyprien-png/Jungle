@@ -1,10 +1,21 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const loaderGlb = new GLTFLoader();
+const loader = new GLTFLoader();
 
-export default async function loadAssets(path) {
-    const glb = await loaderGlb.loadAsync(path);
-    const visuals = glb.scene.children;
-    // Ignore the colliders
-    return visuals.filter(visual => visual.name.includes("visual"));
+export default function loadModel(gtfsPath) {
+    return new Promise((resolve, reject) => {
+        loader.load(
+            gtfsPath,
+            function (gltf) {
+                resolve(gltf.scene);
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                console.log('An error happened');
+                reject(error);
+            }
+        );
+    });
 }
