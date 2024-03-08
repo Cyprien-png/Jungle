@@ -9,4 +9,13 @@ export default class Plant {
             this.visuals = gtf;
         }).catch(error => {console.log('errr')});
     }
+
+    show = (scene) => {
+        let loop = setInterval(() => {
+            if (this.visuals){
+                scene.add(this.visuals);
+                clearInterval(loop);
+            } 
+        }, 100, 1000);
+    }
 }
