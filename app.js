@@ -10,7 +10,7 @@ const height = 768;
 
 const canvas = document.querySelector('canvas');
 const scene = new Scene();
-const camera = new Camera(width, height);
+const camera = new Camera(width, height, [0,2,1], [0,1,-0.6]); // (0 2 1) to (0 0 2)
 const light = new Light(0, 2, 1);
 const plant = new Plant('./assets/plants/plam_tree.glb');
 
