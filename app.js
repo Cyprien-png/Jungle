@@ -3,6 +3,7 @@ import Camera from "./engine/Camera";
 import Light from "./engine/Light";
 import Graphic from "./engine/Graphic";
 import Plant from "./entity/Plant";
+import Interface from "./engine/Interface";
 
 
 const width = innerWidth;
@@ -25,19 +26,5 @@ graphic.onUpdate(delta => {
 });
 
 document.addEventListener("wheel", (e) => {
-
-    const direction = e.wheelDeltaY > 0 ? 1 : -1;
-
-    const acceleration = 2
-    const baseSpeed = 0.005
-
-
-    for (let i = 0; i < 50; i++) {
-        setTimeout(() => {
-            plant.visuals.rotateY(direction * baseSpeed);
-            camera.translateY(direction * baseSpeed);
-            camera.translateZ(-direction * baseSpeed);
-            camera.lookAt(...lookedPoint);
-        }, (i**acceleration)/10 );
-    }
+    Interface.scroll(e, plant, camera, lookedPoint);
 });
